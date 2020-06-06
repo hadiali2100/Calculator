@@ -1,0 +1,189 @@
+import tkinter
+from tkinter import *
+
+root = tkinter.Tk()
+root.geometry("250x400+300+300")
+root.resizable()
+root.title("Calculator")
+
+data = StringVar()
+lbl = Label(
+    root,
+    text="Hadi",
+    anchor=SE,
+    font=("Verdana", 20),
+    textvariable=data,
+    background="#ffffff",
+    fg="#000000",
+)
+lbl.pack(expand=True, fill="both")
+
+row1 = Frame(root, bg="#000000")
+row1.pack(expand=True, fill="both",)
+
+row2 = Frame(root)
+row2.pack(expand=True, fill="both",)
+
+row3 = Frame(root)
+row3.pack(expand=True, fill="both",)
+
+row4 = Frame(root)
+row4.pack(expand=True, fill="both",)
+
+# Below code is for first row having four buttons
+
+btn1 = Button(
+    row1,
+    text="1",
+    font=("Verdana", 22),
+    relief=GROOVE,
+    border=0,
+)
+btn1.pack(side=LEFT, expand=True, fill="both",)
+
+btn2 = Button(
+    row1,
+    text="2",
+    font=("Verdana", 22),
+    relief=GROOVE,
+    border=0,
+)
+btn2.pack(side=LEFT, expand=True, fill="both",)
+
+btn3 = Button(
+    row1,
+    text="3",
+    font=("Verdana", 22),
+    relief=GROOVE,
+    border=0,
+)
+btn3.pack(side=LEFT, expand=True, fill="both",)
+
+btn4 = Button(
+    row1,
+    text="+",
+    font=("Verdana", 22),
+    relief=GROOVE,
+    border=0,
+)
+btn4.pack(side=LEFT, expand=True, fill="both",)
+
+# Below code is for second row having four buttons
+
+
+btn1 = Button(
+    row2,
+    text="4",
+    font=("Verdana", 22),
+    relief=GROOVE,
+    border=0,
+)
+btn1.pack(side=LEFT, expand=True, fill="both",)
+
+btn2 = Button(
+    row2,
+    text="5",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn2.pack(side=LEFT, expand=True, fill="both",)
+
+btn3 = Button(
+    row2,
+    text="6",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn3.pack(side=LEFT, expand=True, fill="both",)
+
+btn4 = Button(
+    row2,
+    text="-",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn4.pack(side=LEFT, expand=True, fill="both",)
+
+# Below code is for third row having four buttons
+
+
+btn1 = Button(
+    row3,
+    text="7",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn1.pack(side=LEFT, expand=True, fill="both",)
+
+btn2 = Button(
+    row3,
+    text="8",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn2.pack(side=LEFT, expand=True, fill="both",)
+
+btn3 = Button(
+    row3,
+    text="9",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn3.pack(side=LEFT, expand=True, fill="both",)
+
+btn4 = Button(
+    row3,
+    text="*",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn4.pack(side=LEFT, expand=True, fill="both",)
+
+# Below code is for second row having four buttons
+
+
+btn1 = Button(
+    row4,
+    text="C",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn1.pack(side=LEFT, expand=True, fill="both",)
+
+btn2 = Button(
+    row4,
+    text="0",
+    relief=GROOVE,
+    border=0,
+    font=("Verdana", 22),
+)
+btn2.pack(side=LEFT, expand=True, fill="both",)
+
+btn3 = Button(
+    row4,
+    relief=GROOVE,
+    border=0,
+    text="=",
+    font=("Verdana", 22),
+)
+btn3.pack(side=LEFT, expand=True, fill="both",)
+
+btn4 = Button(
+    row4,
+    relief=GROOVE,
+    border=0,
+    text="/",
+    font=("Verdana", 22),
+)
+btn4.pack(side=LEFT, expand=True, fill="both",)
+
+
+root.mainloop()
