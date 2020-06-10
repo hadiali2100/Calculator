@@ -1,6 +1,148 @@
 import tkinter
 from tkinter import *
 
+# Code to take actions when a particular button is pressed
+
+val = ""
+A = 0
+operator = ""
+
+
+def btn1_clicked():
+    global val
+    val += "1"
+    data.set(val)
+
+
+def btn2_clicked():
+    global val
+    val += "2"
+    data.set(val)
+
+
+def btn3_clicked():
+    global val
+    val += "3"
+    data.set(val)
+
+
+def btn4_clicked():
+    global val
+    val += "4"
+    data.set(val)
+
+
+def btn5_clicked():
+    global val
+    val += "5"
+    data.set(val)
+
+
+def btn6_clicked():
+    global val
+    val += "6"
+    data.set(val)
+
+
+def btn7_clicked():
+    global val
+    val += "7"
+    data.set(val)
+
+
+def btn8_clicked():
+    global val
+    val += "8"
+    data.set(val)
+
+
+def btn9_clicked():
+    global val
+    val += "9"
+    data.set(val)
+
+
+def btn0_clicked():
+    global val
+    val += "0"
+    data.set(val)
+
+
+def btn_plus_pressed():
+    global val
+    global A
+    global operator
+    A = int(val)
+    operator = "+"
+    val += "+"
+    data.set(val)
+
+
+def btn_minus_pressed():
+    global val
+    global A
+    global operator
+    A = int(val)
+    operator = "-"
+    val += "-"
+    data.set(val)
+
+
+def btn_mul_pressed():
+    global val
+    global A
+    global operator
+    A = int(val)
+    operator = "*"
+    val += "*"
+    data.set(val)
+
+
+def btn_div_pressed():
+    global val
+    global A
+    global operator
+    A = int(val)
+    operator = "/"
+    val += "/"
+    data.set(val)
+
+
+def c_pressed():
+    global val
+    global A
+    global operator
+    A = 0
+    operator = ""
+    val = ""
+    data.set(val)
+
+# Code to do the actual calculation
+
+def result():
+    global val
+    global A
+    global operator
+    val2 = val
+    if operator == "+":
+        x = int(val.split("+")[1])
+        c = A+x
+        data.set(c)
+    elif operator == "-":
+        x = int(val.split("-")[1])
+        c = A - x
+        data.set(c)
+    elif operator == "*":
+        x = int(val.split("*")[1])
+        c = A*x
+        data.set(c)
+    elif operator == "/":
+        x = int(val.split("/")[1])
+        c = A/x
+        data.set(c)
+
+# The physical appearence of the calculator
+
 root = tkinter.Tk()
 root.geometry("250x400+300+300")
 root.resizable()
@@ -38,6 +180,7 @@ btn1 = Button(
     font=("Verdana", 22),
     relief=GROOVE,
     border=0,
+    command=btn1_clicked,
 )
 btn1.pack(side=LEFT, expand=True, fill="both",)
 
@@ -47,6 +190,7 @@ btn2 = Button(
     font=("Verdana", 22),
     relief=GROOVE,
     border=0,
+    command=btn2_clicked,
 )
 btn2.pack(side=LEFT, expand=True, fill="both",)
 
@@ -56,6 +200,7 @@ btn3 = Button(
     font=("Verdana", 22),
     relief=GROOVE,
     border=0,
+    command=btn3_clicked,
 )
 btn3.pack(side=LEFT, expand=True, fill="both",)
 
@@ -65,11 +210,11 @@ btn4 = Button(
     font=("Verdana", 22),
     relief=GROOVE,
     border=0,
+    command=btn_plus_pressed,
 )
 btn4.pack(side=LEFT, expand=True, fill="both",)
 
 # Below code is for second row having four buttons
-
 
 btn1 = Button(
     row2,
@@ -77,6 +222,7 @@ btn1 = Button(
     font=("Verdana", 22),
     relief=GROOVE,
     border=0,
+    command=btn4_clicked,
 )
 btn1.pack(side=LEFT, expand=True, fill="both",)
 
@@ -85,6 +231,7 @@ btn2 = Button(
     text="5",
     relief=GROOVE,
     border=0,
+    command=btn5_clicked,
     font=("Verdana", 22),
 )
 btn2.pack(side=LEFT, expand=True, fill="both",)
@@ -94,6 +241,7 @@ btn3 = Button(
     text="6",
     relief=GROOVE,
     border=0,
+    command=btn6_clicked,
     font=("Verdana", 22),
 )
 btn3.pack(side=LEFT, expand=True, fill="both",)
@@ -103,18 +251,19 @@ btn4 = Button(
     text="-",
     relief=GROOVE,
     border=0,
+    command=btn_minus_pressed,
     font=("Verdana", 22),
 )
 btn4.pack(side=LEFT, expand=True, fill="both",)
 
 # Below code is for third row having four buttons
 
-
 btn1 = Button(
     row3,
     text="7",
     relief=GROOVE,
     border=0,
+    command=btn7_clicked,
     font=("Verdana", 22),
 )
 btn1.pack(side=LEFT, expand=True, fill="both",)
@@ -124,6 +273,7 @@ btn2 = Button(
     text="8",
     relief=GROOVE,
     border=0,
+    command=btn8_clicked,
     font=("Verdana", 22),
 )
 btn2.pack(side=LEFT, expand=True, fill="both",)
@@ -133,6 +283,7 @@ btn3 = Button(
     text="9",
     relief=GROOVE,
     border=0,
+    command=btn9_clicked,
     font=("Verdana", 22),
 )
 btn3.pack(side=LEFT, expand=True, fill="both",)
@@ -142,18 +293,19 @@ btn4 = Button(
     text="*",
     relief=GROOVE,
     border=0,
+    command=btn_mul_pressed,
     font=("Verdana", 22),
 )
 btn4.pack(side=LEFT, expand=True, fill="both",)
 
 # Below code is for second row having four buttons
 
-
 btn1 = Button(
     row4,
     text="C",
     relief=GROOVE,
     border=0,
+    command=c_pressed,
     font=("Verdana", 22),
 )
 btn1.pack(side=LEFT, expand=True, fill="both",)
@@ -163,6 +315,7 @@ btn2 = Button(
     text="0",
     relief=GROOVE,
     border=0,
+    command=btn0_clicked,
     font=("Verdana", 22),
 )
 btn2.pack(side=LEFT, expand=True, fill="both",)
@@ -172,6 +325,7 @@ btn3 = Button(
     relief=GROOVE,
     border=0,
     text="=",
+    command=result,
     font=("Verdana", 22),
 )
 btn3.pack(side=LEFT, expand=True, fill="both",)
@@ -182,6 +336,7 @@ btn4 = Button(
     border=0,
     text="/",
     font=("Verdana", 22),
+    command=btn_div_pressed,
 )
 btn4.pack(side=LEFT, expand=True, fill="both",)
 
